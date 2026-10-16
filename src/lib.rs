@@ -3,5 +3,7 @@
 //! Part of the Inox desktop environment. See the repository `AGENTS.md` for
 //! contribution and architecture constraints.
 
+pub mod logging;
+
 /// The crate version as reported by Cargo.
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
