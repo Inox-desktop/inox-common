@@ -11,7 +11,7 @@
 - 默认禁止 `unsafe`：`Cargo.toml` 中 `[lints.rust] unsafe_code = "forbid"`。
 - 非测试路径禁止 `unwrap()` / `expect()` / `panic!()` / `todo!()` / `unimplemented!()`。
 - 日志统一使用 `tracing`，禁止 `println!` / `eprintln!`。
-- 本 crate **已被跨仓库消费**：`inox-compositor` 通过根级 §8 的锁定 git `tag` 依赖 `v0.1.0`；`v0.2.0` 起新增 `paths` 模块，供 `inox-config` 等上层组件复用。任何破坏性变更须发布新 `tag`，下游再按根级 §8 锁定升级；不要在已发布的 `tag` 上重写历史。
+- 本 crate **已被跨仓库消费**：`inox-compositor` 通过根级 §8 的锁定 git `tag` 依赖 `v0.1.0`；`v0.1.1` 起新增 `paths` 模块，供 `inox-config` 等上层组件复用；版本号语义（0.x 的 minor 为不兼容段、兼容变更走 patch）见元仓库 [ADR 0010](https://github.com/Inox-desktop/inox/blob/main/docs/adr/0010-versioning-and-release-policy.md)。任何破坏性变更须发布新 `tag`，下游再按根级 §8 锁定升级；不要在已发布的 `tag` 上重写历史。
 - 新增模块只在**出现真实消费者**时引入（依赖排期见元仓库 ADR 0004）：不接受为「以后可能要用」而提前声明抽象或依赖。
 
 ## 主要依赖
