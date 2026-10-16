@@ -11,7 +11,7 @@
 - 默认禁止 `unsafe`：`Cargo.toml` 中 `[lints.rust] unsafe_code = "forbid"`。
 - 非测试路径禁止 `unwrap()` / `expect()` / `panic!()` / `todo!()` / `unimplemented!()`。
 - 日志统一使用 `tracing`，禁止 `println!` / `eprintln!`。
-- M0 阶段**不引入 Inox 跨仓库依赖**：跨仓库依赖在首次需要它的里程碑中引入，并按根级 §8 使用锁定 `tag` 的 git 依赖。
+- 本 crate **已被跨仓库消费**（M1）：`inox-compositor` 通过根级 §8 的锁定 git `tag` 依赖 `inox-common v0.1.0`。任何破坏性变更须发布新 `tag`，下游再按根级 §8 锁定升级；不要在已发布的 `tag` 上重写历史。
 
 ## 主要依赖
 
@@ -35,7 +35,7 @@
 
 - 纯逻辑必须有单元测试（`#[cfg(test)]`）。
 - 测试代码不受“禁止 unwrap/expect/panic”约束。
-- M0 骨架阶段暂无业务逻辑，测试随功能里程碑补充。
+- `logging` 模块已具备单元测试（显式指令优先、缺失/空白回退默认、首尾空白 trim、非法指令报错并携带原指令）；`cargo test --all-features` 必须保持全绿。
 
 ## 目录结构
 

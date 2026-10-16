@@ -4,7 +4,9 @@
 
 ## 状态
 
-骨架已就位。当前提供 `logging` 模块：统一的 `tracing` 初始化入口（`RUST_LOG` 过滤，默认 `info`，不 panic），供各组件二进制复用；其余共享类型与工具随里程碑补充。
+`v0.1.0` 已发布，并被 `inox-compositor` 通过锁定 `tag` 的 git 依赖消费。
+
+当前提供 `logging` 模块：统一的 `tracing` 初始化入口（`RUST_LOG` 过滤，默认 `info`，不 panic），供各组件二进制复用；其余共享类型与工具随里程碑补充。
 
 ## 开发约定
 
