@@ -4,6 +4,7 @@
 //! contribution and architecture constraints.
 
 pub mod logging;
+pub mod paths;
 
 /// The crate version as reported by Cargo.
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");

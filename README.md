@@ -4,9 +4,17 @@
 
 ## 状态
 
-`v0.1.0` 已发布，并被 `inox-compositor` 通过锁定 `tag` 的 git 依赖消费。
+- `v0.1.0` 已发布，并被 `inox-compositor` 通过锁定 `tag` 的 git 依赖消费。
+- `v0.2.0` 新增 `paths` 模块（非破坏性小幅版本）：按 XDG Base Directory Specification 解析 `$XDG_CONFIG_HOME` / `$XDG_DATA_HOME` / `$XDG_STATE_HOME` / `$XDG_CACHE_HOME` / `$XDG_RUNTIME_DIR`，并给出 Inox 的 `<base>/inox` 目录，供 `inox-config` 等上层组件复用（PRD §9.1）。
 
-当前提供 `logging` 模块：统一的 `tracing` 初始化入口（`RUST_LOG` 过滤，默认 `info`，不 panic），供各组件二进制复用；其余共享类型与工具随里程碑补充。
+当前模块：
+
+| 模块 | 作用 |
+|------|------|
+| `logging` | 统一的 `tracing` 初始化入口（`RUST_LOG` 过滤，默认 `info`，不 panic），供各组件二进制复用 |
+| `paths` | XDG 基础目录解析（含 Inox 子目录）：不读全局状态，环境以 `XdgEnv` 快照注入，因此可完整单测 |
+
+其余共享类型与工具函数在其**首个真实消费者出现时**再引入：本 crate 刻意不提前声明无人使用的抽象（依赖排期原则见元仓库 ADR 0004）。
 
 ## 开发约定
 
