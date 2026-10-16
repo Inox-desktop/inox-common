@@ -15,7 +15,7 @@
 
 ## 主要依赖
 
-`tracing`, `thiserror`
+`tracing`, `tracing-subscriber`（`env-filter`）, `thiserror`
 
 ## 命令
 
