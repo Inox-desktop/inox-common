@@ -5,7 +5,7 @@
 ## 状态
 
 - `v0.1.0` 已发布，并被 `inox-compositor` 通过锁定 `tag` 的 git 依赖消费。
-- `v0.2.0` 新增 `paths` 模块（非破坏性小幅版本）：按 XDG Base Directory Specification 解析 `$XDG_CONFIG_HOME` / `$XDG_DATA_HOME` / `$XDG_STATE_HOME` / `$XDG_CACHE_HOME` / `$XDG_RUNTIME_DIR`，并给出 Inox 的 `<base>/inox` 目录，供 `inox-config` 等上层组件复用（PRD §9.1）。
+- `v0.1.1` 新增 `paths` 模块（按 [ADR 0010](https://github.com/Inox-desktop/inox/blob/main/docs/adr/0010-versioning-and-release-policy.md) 的 0.x 语义，兼容的新增走 patch）：按 XDG Base Directory Specification 解析 `$XDG_CONFIG_HOME` / `$XDG_DATA_HOME` / `$XDG_STATE_HOME` / `$XDG_CACHE_HOME` / `$XDG_RUNTIME_DIR`，并给出 Inox 的 `<base>/inox` 目录，供 `inox-config` 等上层组件复用（PRD §9.1）。
 
 当前模块：
 
