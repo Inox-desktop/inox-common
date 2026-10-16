@@ -1,0 +1,22 @@
+[package]
+name = "inox-common"
+description = "Shared types, error handling and logging utilities for the Inox desktop"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "BSD-3-Clause"
+repository = "https://github.com/Inox-desktop/inox-common"
+readme = "README.md"
+keywords = ["wayland", "desktop", "inox"]
+categories = ["desktop"]
+
+[dependencies]
+tracing = "0.1"
+thiserror = "2"
+
+[lints.rust]
+unsafe_code = "forbid"
+missing_docs = "warn"
+
+[lints.clippy]
+all = "warn"
